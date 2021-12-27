@@ -54,4 +54,5 @@ java -jar "$DIR/apktool.jar" b -o "$fullTempFileName" "$tmpDir" --use-aapt2
 #jarsigner -verbose -keystore $debugKeystore -storepass android -keypass android "./$tempFileName" androiddebugkey
 zipalign -p 4 $fullTempFileName $fullNewFileName
 rm -rf $fullTempFileName
+rm -r $tmpDir
 echo "Resigned APK successfully $newFileName"
