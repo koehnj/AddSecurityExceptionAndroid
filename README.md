@@ -2,6 +2,7 @@
 
 - Updated Apktool to Version 2.6.0
 - Added Parameter for Apktool to use AAPT2
+- Changed the Output Directory to be the same as the Input Directory
 
 
 # Original README:
