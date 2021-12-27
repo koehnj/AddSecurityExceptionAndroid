@@ -51,8 +51,11 @@ fi
 java -jar "$DIR/apktool.jar" empty-framework-dir --force "$tmpDir"
 echo "Building temp APK $tempFileName"
 java -jar "$DIR/apktool.jar" b -o "$fullTempFileName" "$tmpDir" --use-aapt2
+# for APK Signature Scheme v1
 #jarsigner -verbose -keystore $debugKeystore -storepass android -keypass android "./$tempFileName" androiddebugkey
 zipalign -p 4 $fullTempFileName $fullNewFileName
+# for APK Signature Scheme v2
+apksigner sign -v --ks ~/.android/debug.keystore --ks-key-alias androiddebugkey --ks-pass pass:android $fullNewFileName
 rm -rf $fullTempFileName
 rm -r $tmpDir
 echo "Resigned APK successfully $newFileName"

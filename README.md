@@ -1,9 +1,11 @@
 # Changelog
 
-- Updated Apktool to Version 2.6.0
-- Added Parameter for Apktool to use AAPT2
-- Changed the Output Directory to be the same as the Input Directory
+- Changed from Jarsigner to Apksigner to use APK Signature Scheme v2
+- Added parameter for Apktool to use AAPT2
+- Updated Apktool to version 2.6.0
+- Changed the output directory to be the same as the input directory
 - Added command to remove the temp directory
+
 
 # Original README:
 
