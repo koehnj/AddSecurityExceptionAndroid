@@ -1,5 +1,8 @@
 # Changelog
--updated Apktool to version 2.6.0
+
+- Updated Apktool to Version 2.6.0
+- Added Parameter for Apktool to use AAPT2
+
 
 # Original README:
 
