@@ -1,3 +1,8 @@
+# Changelog
+-updated Apktool to version 2.6.0
+
+# Original README:
+
 # Add Security Exception to APK
 
 In Android 7.0, Google introduced changes to the way user Certificate Authorities (CA) are trusted. These changes prevent third-parties from listening to network requests coming out of the application:
