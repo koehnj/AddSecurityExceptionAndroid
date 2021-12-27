@@ -31,6 +31,9 @@ temp="_temp.apk"
 tempFileName=$filename$temp
 newFileName=$filename$new
 tmpDir=/tmp/$filename
+inputDir="$(dirname "$fullfile")/"
+fullTempFileName=$inputDir$tempFileName
+fullNewFileName=$inputDir$newFileName
 
 java -jar "$DIR/apktool.jar" d -f -s -o "$tmpDir" "$fullfile"
 
@@ -47,8 +50,8 @@ fi
 
 java -jar "$DIR/apktool.jar" empty-framework-dir --force "$tmpDir"
 echo "Building temp APK $tempFileName"
-java -jar "$DIR/apktool.jar" b -o "./$tempFileName" "$tmpDir" --use-aapt2
+java -jar "$DIR/apktool.jar" b -o "$fullTempFileName" "$tmpDir" --use-aapt2
 #jarsigner -verbose -keystore $debugKeystore -storepass android -keypass android "./$tempFileName" androiddebugkey
-zipalign -p 4 $tempFileName $newFileName
-rm -rf $tempFileName
+zipalign -p 4 $fullTempFileName $fullNewFileName
+rm -rf $fullTempFileName
 echo "Resigned APK successfully $newFileName"
